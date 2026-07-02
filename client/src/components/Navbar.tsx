@@ -15,6 +15,19 @@ const Navbar = () => {
     const [userMenuOpen, setUserMenuOpen] = useState(false)
     const navigate = useNavigate()
 
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault()
+        if (searchQuery.trim()) {
+            navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`)
+            setSearchQuery("")
+        }
+    }
+
+    const handleLogout = () => {
+        setUserMenuOpen(false)
+        navigate("/");
+    }
+
     return (
 
         <nav className="bg-white sticky top-0 z-50 border-b border-app-border">
@@ -25,14 +38,16 @@ const Navbar = () => {
                 </Link>
 
                 <div className="w-full flex items-center justify-end gap-4 lg:gap-10">
+
                     {/* Nav Links - Desktop */}
                     <div className="hidden md:flex items-center gap-6 text-sm text-zinc-600">
                         <Link to="/">Home</Link>
                         <Link to="/products">Products</Link>
                         <Link to="/deals" className="text-app-orange">Deals</Link>
                     </div>
+
                     {/* Search */}
-                    <form className="hidden sm:flex flex-1 max-w-sm text-xs sm:text-sm">
+                    <form onSubmit={handleSearch} className="hidden sm:flex flex-1 max-w-sm text-xs sm:text-sm">
                         <div className="relative w-full">
                             <SearchIcon className="absolute left-2.5 top-1/2 -translate-y-1/2 size-4 text-zinc-500" />
                             <input
@@ -129,7 +144,7 @@ const Navbar = () => {
                                             {user && (
                                                 <div className="border-t border-app-border pt-2 mt-2">
                                                     <button
-                                                        onClick={() => {/* logout logic */ }}
+                                                        onClick={handleLogout}
                                                         className="dropdown-link text-red-500 hover:bg-red-50 transition-colors"
                                                     >
                                                         <LogOutIcon size={16} />
