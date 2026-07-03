@@ -2,6 +2,8 @@ import React from 'react'
 import { Outlet } from "react-router-dom"
 import Banner from '../components/Banner'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import CartSidebar from '../components/CartSidebar'
 
 
 const AppLayout = () => {
@@ -15,9 +17,9 @@ const AppLayout = () => {
                 <Outlet />
             </main>
 
-            <p>footer</p>
+            <Footer />
 
-            <p>cartsidebar</p>
+            <CartSidebar />
 
         </>
 

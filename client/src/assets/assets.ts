@@ -13,11 +13,13 @@ import personal_care from "./personal_care.png";
 import baby_care from "./baby_care.png";
 import meat_seafood from "./meat_seafood.png";
 import groceryBee_logo from "./GroceryBee_Logo.png"
+import title_logo from "./title.png"
 
 export const assets = {
     delivery_truck,
     hero_bg,
     groceryBee_logo,
+    title_logo,
 };
 
 export const categoriesData = [
@@ -48,12 +50,12 @@ export const deliveryPartnerLoginImage = "https://images.unsplash.com/photo-1610
 
 export const appPromoBannerData = {
     title: "Get fresh groceries in minutes",
-    description: "Download the Instacart app for exclusive deals, real-time tracking, and the freshest selection delivered right to your door.",
+    description: "Download the GroceryBee app for exclusive deals, real-time tracking, and the freshest selection delivered right to your door.",
 };
 
 export const footerData = {
     brand: {
-        name: "Instacart",
+        name: "GroceryBee",
         description: "Bringing fresh, organic groceries straight from local farms to your doorstep. Nourish your home with Earth's finest.",
         socials: [
             { icon: SiFacebook, link: "#" },
@@ -90,7 +92,7 @@ export const footerData = {
     ],
 
     bottom: {
-        copyright: "© 2026 Greatstack. All rights reserved.",
+        copyright: "© 2026 GroceryBee. All rights reserved.",
         links: [
             { label: "Privacy Policy", href: "#" },
             { label: "Terms of Service", href: "#" },
