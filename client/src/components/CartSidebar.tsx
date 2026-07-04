@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
-import { X, Plus, Minus, ShoppingBag, Trash2, XIcon, ShoppingBagIcon, MinusIcon, PlusIcon, Trash2Icon } from 'lucide-react';
+import { X, Plus, Minus, ShoppingBag, Trash2, XIcon, ShoppingBagIcon, MinusIcon, PlusIcon, Trash2Icon, ArrowRightIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const CartSidebar = () => {
@@ -76,6 +76,7 @@ const CartSidebar = () => {
                                         {currency}
                                         {item.product.price.toFixed(2)} / {item.product.unit}
                                     </p>
+
                                     <div className="flex items-center justify-between mt-2">
                                         <div className="flex items-center gap-1.5">
 
@@ -95,6 +96,7 @@ const CartSidebar = () => {
                                                 <PlusIcon className="size-3" />
                                             </button>
                                         </div>
+
                                         <div className="flex items-center gap-2">
                                             <span className="text-sm font-semibold">
                                                 {currency}{(item.product.price * item.quantity).toFixed(2)}
@@ -106,16 +108,23 @@ const CartSidebar = () => {
                                                 <Trash2Icon className="size-4" />
                                             </button>
                                         </div>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         ))
+
                     )}
+
                 </div>
 
 
                 {/* Footer */}
                 {items.length > 0 && (
+
                     <div className="p-5 border-t border-app-border space-y-3">
                         <div className="flex justify-between text-sm">
                             <span className="text-app-text-light">Subtotal</span>
@@ -141,7 +150,20 @@ const CartSidebar = () => {
                             <span>Total</span>
                             <span>{currency}{grandTotal.toFixed(2)}</span>
                         </div>
+
+                        <button
+                            onClick={() => {
+                                setIsCartOpen(false);
+                                navigate('/checkout');
+                                window.scrollTo(0, 0);
+                            }}
+                            className="w-full py-3 bg-app-orange text-white font-semibold rounded-xl hover:bg-app-orange-dark transition-colors flex-center gap-2 active:scale-[0.98]"
+                        >
+                            Proceed to Checkout <ArrowRightIcon className="size-4" />
+                        </button>
+
                     </div>
+
                 )}
 
 
