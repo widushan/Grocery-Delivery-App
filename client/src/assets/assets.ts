@@ -801,9 +801,9 @@ export const dummyDashboardOrdersData = [
         ],
         paymentMethod: "cash",
         subtotal: 230,
-        deliveryFee: 0,
-        tax: 18.4,
-        total: 248.4,
+        deliveryFee: 1000,
+
+        total: 1230,
         status: "Delivered",
         statusHistory: [
             { status: "Placed", note: "Order placed successfully", _id: "69d366617ed7e54198d67daf", timestamp: "2026-04-06T07:53:05.769Z" },
@@ -830,9 +830,9 @@ export const dummyDashboardOrdersData = [
         ],
         paymentMethod: "cash",
         subtotal: 230,
-        deliveryFee: 0,
-        tax: 18.4,
-        total: 248.4,
+        deliveryFee: 1000,
+
+        total: 1230,
         status: "Out for Delivery",
         statusHistory: [
             { status: "Placed", note: "Order placed successfully", _id: "69d366617ed7e54198d67daf", timestamp: "2026-04-06T07:53:05.769Z" },
